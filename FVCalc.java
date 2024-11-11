@@ -7,12 +7,12 @@ public class FVCalc {
         double nYears  = Double.parseDouble(args[2]); // 'n'
 		
 		// Imply power function to calculate the rate.
-		double use_mult = Math.pow(annualRate + 1, nYears);
+		double useMult = Math.pow(annualRate + 1, nYears);
 
 		// Calculate the concluded future value.
-		double future_value = currentValue * use_mult;
+		double futureValue = currentValue * useMult;
 
 		// Print the results.
-		System.out.println("After " + (int) nYears + " years, $" + currentValue + " saved at " + (annualRate * 100) + "% will yield $" + (int) future_value);
+		System.out.println("After " + (int) nYears + " years, a $" + currentValue + " saved at " + (annualRate * 100) + "% will yield $" + (int) futureValue);
 	}
 }
