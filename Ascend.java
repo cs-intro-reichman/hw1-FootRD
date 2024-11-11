@@ -1,29 +1,27 @@
 import java.util.Random;
-import java.util.Arrays;
 
-// Generates three integer random numbers in a given range,
-// and prints them in increasing order.
 public class Ascend {
-	public static void main(String[] args) {
-		// Define a random variable.
-		Random rnd_num = new Random();
+    public static void main(String[] args) {
+        // Define the random variable.
+        Random rnd_num = new Random();
 
-		// Define our range.
-		int min_num = 1;
-		int max_num = 100;
+        // Define our max number.
+        int lim = Integer.parseInt(args[0]);
 
-		// Refer to the randomised numbers.
-		int num1 = rnd_num.nextInt(max_num - min_num + 1) + min_num;
-        int num2 = rnd_num.nextInt(max_num - min_num + 1) + min_num;
-        int num3 = rnd_num.nextInt(max_num - min_num + 1) + min_num;
+        // Refer to the randomised numbers.
+        int a = rnd_num.nextInt(lim);
+        int b = rnd_num.nextInt(lim);
+        int c = rnd_num.nextInt(lim);
 
-		// Create the array.
-		int[] numbers = {num1, num2, num3};
-        
-		// Sort the array in an ascending order.
-		Arrays.sort(numbers);
-        
-		// Print the array.
-		System.out.println("Random numbers in ascending order: " + numbers[0] + ", " + numbers[1] + ", " + numbers[2]);
-	}
+        // Find the min, middle, and max numbers.
+        int min = Math.min(a, Math.min(b, c));
+        int max = Math.max(a, Math.max(b, c));
+        int mid = a + b + c - min - max;
+
+        // Print the random numbers.
+        System.out.println(a + " " + b + " " + c);
+
+        // Print the numbers in an ascending order.
+        System.out.println(min + " " + mid + " " + max);
+    }
 }
